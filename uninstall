@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Script to uninstall Upload to Imgur nautilus-script
+
+echo "Removing files"
+gksudo "rm -rf /usr/share/uploadtoimgur/"
+gksudo rm /etc/skel/.gnome2/nautilus-scripts/Upload\ to\ Imgur
+rm ~/.gnome2/nautilus-scripts/Upload\ to\ Imgur
+
+echo "Restarting Nautilus"
+nautilus -q
+
+echo "Done!"

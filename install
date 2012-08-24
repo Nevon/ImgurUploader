@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#Script to install Upload to Imgur nautilus-script
+
+echo "Creating directories..."
+gksudo mkdir /usr/share/uploadtoimgur/
+gksudo mkdir /etc/skel/.gnome2
+gksudo mkdir /etc/skel/.gnome2/nautilus-scripts
+gksudo mkdir /usr/share/nautilus-scripts
+
+echo "Copying files..."
+gksudo cp Upload\ to\ Imgur /usr/share/nautilus-scripts/
+gksudo cp uploader.py /usr/share/uploadtoimgur/
+gksudo ln -s /usr/share/nautilus-scripts/Upload\ to\ Imgur /etc/skel/.gnome2/nautilus-scripts/
+ln -sf /usr/share/nautilus-scripts/Upload\ to\ Imgur ~/.gnome2/nautilus-scripts/Upload\ to\ Imgur
+echo "Restarting nautilus."
+nautilus -q
+echo "Setting permissions"
+gksudo chmod 555 /usr/share/nautilus-scripts/Upload\ to\ Imgur
+gksudo chmod 555 /usr/share/uploadtoimgur/uploader.py
+echo "Done!"
