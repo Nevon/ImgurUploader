@@ -57,7 +57,7 @@ class Uploadr:
 		
 	def broadcast(self, l):
 		message = '\n'.join(l)
-		notification = Notify.Notification.new(_("Imgur Uploader"), message, None)
+		notification = Notify.Notification.new(APP, message, None)
 		notification.show()
 		
 		
