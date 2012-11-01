@@ -3,10 +3,6 @@
 
 echo "Removing files"
 gksudo "rm -rf /usr/share/uploadtoimgur/"
-gksudo rm /etc/skel/.gnome2/nautilus-scripts/Upload\ to\ Imgur
-rm ~/.gnome2/nautilus-scripts/Upload\ to\ Imgur
-
-echo "Restarting Nautilus"
-nautilus -q
+rm ~/.local/share/nautilus/scripts/Upload\ to\ Imgur
 
 echo "Done!"
