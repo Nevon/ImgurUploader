@@ -84,7 +84,7 @@ class ImgurUploader:
 				
 		buf = StringIO.StringIO()
 		
-		c.setopt(c.URL, "http://imgur.com/api/upload.json")
+		c.setopt(c.URL, "http://api.imgur.com/2/upload.json")
 		c.setopt(c.HTTPPOST, values)
 		c.setopt(c.WRITEFUNCTION, buf.write)
 		
@@ -98,7 +98,7 @@ class ImgurUploader:
 
 		data = json.loads(result)
 
-		return data['rsp']['image']['original_image']
+		return data['upload']['links']['original']
 		
 	def setClipBoard(self, urls):
 		'''Adds a string to the clipboard. urls should be a list of strings.'''
